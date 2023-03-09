@@ -1,8 +1,8 @@
-# USER GUIDE AND STARTUP STEPS
+# STARTUP STEPS
 
 You should first make sure you have Python installed on your computer. Refer to the official [python](https://www.python.org/) website for more info.
 
-## QUICK START
+## TL;DR
 
 ```shell
 # Clone the repo
@@ -31,6 +31,8 @@ py manage.py runserver
 
 Please use the default terminal for your respective operating systems e.g (**cmd** for **windows**).
 
+**_PS: Make sure you have cloned the repo before going on._**
+
 For this project, we used the `pipenv` package for managing our virtual environments as it is easier to use. To get started, run the following command to ensure you have `pipenv` installed.
 
 ```shell
@@ -51,7 +53,7 @@ To activate this project's virtualenv, run:
 pipenv shell
 ```
 
-After running the above, you should be able to run any django-admin related commands using the manage.py file and so on.
+After running the above, you should be able to run any django-admin related commands using the manage.py file like running migrations and so on.
 
 To exit the shell, run:
 
