@@ -1,8 +1,35 @@
 # USER GUIDE AND STARTUP STEPS
 
-After cloning or getting this project down to your local, You would first need to make sure you have Python installed on your computer. Refer to the official [python](https://www.python.org/) website for more info.
+You should first make sure you have Python installed on your computer. Refer to the official [python](https://www.python.org/) website for more info.
 
-## SETTING UP THE ENVIRONMENT
+## QUICK START
+
+```shell
+# Clone the repo
+git clone https://github.com/Di-void/e-lib.git e-library
+
+# Install pipenv:
+pip install pipenv
+
+# Install dependencies
+pipenv install
+
+# Activate virtualenv
+pipenv shell
+
+# Run migrations
+py manage.py makemigrations
+py manage.py migrate
+
+# Run application
+py manage.py runserver
+```
+
+## DEVELOPER GUIDE
+
+### SETTING UP THE ENVIRONMENT
+
+Please use the default terminal for your respective operating systems e.g (**cmd** for **windows**).
 
 For this project, we used the `pipenv` package for managing our virtual environments as it is easier to use. To get started, run the following command to ensure you have `pipenv` installed.
 
@@ -24,7 +51,7 @@ To activate this project's virtualenv, run:
 pipenv shell
 ```
 
-After running the above, you should be able to run any django related commands using the manage.py file and so on.
+After running the above, you should be able to run any django-admin related commands using the manage.py file and so on.
 
 To exit the shell, run:
 
