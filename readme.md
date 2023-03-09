@@ -17,3 +17,17 @@ pipenv install
 ```
 
 This would install all the project's dependencies needed as specified by the `Pipflie` into a virtual environment on your computer. This is where all your dependencies would live.
+
+To activate this project's virtualenv, run:
+
+```shell
+pipenv shell
+```
+
+After running the above, you should be able to run any django related commands using the manage.py file and so on.
+
+To exit the shell, run:
+
+```shell
+exit
+```
