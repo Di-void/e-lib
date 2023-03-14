@@ -6,6 +6,9 @@ class Category(models.Model):
     """Model representing a category"""
     name = models.CharField(max_length=200, help_text="Enter a Category for books and videos")
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     def __str__(self):
         """String representation of the Model Object"""
         return self.name
