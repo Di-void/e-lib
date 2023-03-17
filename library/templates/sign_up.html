@@ -1,0 +1,75 @@
+{% extends 'base_generic.html' %}
+
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'library/css/sign_up.css' %}">
+{% endblock %}
+
+{% block title %}
+    <title>E-Lib | Create a new Account</title>
+{% endblock %}
+
+<body>
+    {% block navbar %}
+        <nav class="navbarss">
+            <a class="left-section" href="/">768 E-Library</a>
+            <div class="right-section">
+            <a class="contactUs" id="contactUs" href="">Contact Us</a>
+            <a class="signUp" href="{% url 'login' %}" id="signUp">Sign In</a>
+            </div>
+        </nav>
+    {% endblock %}
+
+    {% block content %}
+    <form class="main" method="post">
+      {% csrf_token %}
+        <p class="title01">Sign up</p>
+        <p class="title02">Let's get to know <span class="you">you!</span></p>
+
+        {% if form.errors %}
+          <div class="errors">
+            {% for key, value in form.errors.items %}
+              <p>{{ value }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+    
+        <div class="input-box">
+          <p class="heading">First Name</p>
+          {{ form.first_name }}
+        </div>
+    
+        <div class="input-box">
+          <p class="heading">Last Name</p>
+          {{ form.last_name }}
+        </div>
+
+        <div class="input-box">
+          <p class="heading">Username</p>
+          {{ form.username }}
+        </div>
+    
+        <div class="input-box">
+          <p class="heading">Email address</p>
+          {{ form.email }}
+        </div>
+    
+        <div class="input-box">
+          <p class="heading">Pasword</p>
+          {{ form.password1 }}
+          {{ form.errors.password }}
+        </div>
+    
+        <div class="input-box">
+          <p class="heading">Confirm password</p>
+          {{ form.password2 }}
+        </div>
+    
+        <button class="createBtn" type="submit">CREATE ACCOUNT</button>
+        <p class="log">Already have an account?<a href="{% url 'login' %}" class="login">Login</a></p>
+      </div>
+    
+    </form>
+    {% endblock %}
+
+</body>
