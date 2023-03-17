@@ -12,6 +12,7 @@ body {
 .left-section {
   color: #010851;
   font-weight: 700;
+  text-decoration: none;
   font-size: 30px;
   width: 50%;
   margin-left: 15px;

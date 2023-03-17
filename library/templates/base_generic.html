@@ -51,20 +51,26 @@
             <li>
                 <a href="">contact us</a>
             </li>
+            <li>
+                <a href="{% url 'logout' %}?next={{ request.path }}">Logout</a>
+            </li>
+            
         </ul>
     </nav>
     <!-- end Navbar -->
     {% else %}
     <nav class="navbarss">
-        <div class="left-section">768 E-Library</div>
-        <div class="right-section">
-        <a class="contactUs" id="contactUs" href="">Contact Us</a>
-        <a class="signUp" id="signUp">Sign Up</a>
+        <a href="" class="left-section">768 E-Library</a>
+            <div class="right-section">
+            <a class="contactUs" id="contactUs" href="">Contact Us</a>
+            <a class="signUp" id="signUp">Sign Up</a>
         </div>
+    </nav>
     {% endif %}
 
-    </nav>
     {% endblock %}
+
+    {% block content %}
 
     {% if user.is_authenticated %}
     <main>
@@ -150,6 +156,8 @@
       </div>
     </div>
     {% endif %}
+
+    {% endblock %}
 
     {% block javascript %}
 
