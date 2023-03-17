@@ -1,0 +1,149 @@
+*{
+  margin: 0; 
+}
+
+body{
+  margin: 18px 34px 28px 32px;
+}
+
+.navbarss{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 51px;
+  align-items: center;
+  
+}
+
+.errors {
+  color: red;
+}
+
+.left-section{
+  color: #010851;
+  font-weight: 700;
+  font-size: 30px;
+  width: 50%;
+  text-decoration: none;
+  margin-left: 15px;
+  align-items: center;
+  padding-bottom: 2px;
+}
+
+.right-section{
+  width: 50%;
+  text-align: right;
+  margin-right: 15px;
+
+}
+
+.contactUs{
+  color: #454868;
+  font-weight: 500;
+  font-size: 18px;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.signUp{
+  color: #010851;
+  height: 50px;   
+  width: 127px;
+  border-color: #45486833;
+  border-width: 1px;
+  border-radius: 6px;
+  border-style: solid;
+  margin-left: 15px;
+  background-color: white;
+  font-weight: 600;
+  font-size: 18px;
+  padding-left: 29px;
+  padding-right: 29px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-decoration: none;
+}
+
+.main{
+  display: block;
+  height: 100%;
+  width: 500px;
+  margin-left: 350px;
+}
+
+.title01{
+  font-size: 35px;
+  color: #454868;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 10px;
+  margin-top: 27px;
+
+}
+
+.title02{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: black;
+  margin-bottom: 26px;
+}
+
+.heading{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #322D2D;
+  
+}
+
+form input {
+  width: 684px;
+  height: 79.51px;
+  left: 298px;
+  top: 385px;
+  margin-bottom: 26px;
+  background: #FFFFFF;
+  border: 1px solid rgba(1, 8, 81, 0.38);
+  border-radius: 20px;  
+  padding-left: 18px;
+}
+
+form input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.forgot{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.signBtn{
+  width: 651px;
+  height: 61.86px;
+  background-color: #010851;
+  color: white;
+  border-radius: 20px;
+  border-width: 0;
+  margin-top: 20px;
+  margin-bottom: 43px;
+  margin-left: 15px;
+  font-size: 23px;
+}
+
+.sign{
+  font-weight: 400;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  margin-left: 200px;
+}
+
+.signIn{
+  color: #454868;
+}
