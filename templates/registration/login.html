@@ -8,7 +8,6 @@
 {% block title %}
   <title>E-Lib | Login to your Account </title>
 {% endblock %}
-</head>
 
 <body>
 
@@ -17,7 +16,7 @@
             <a href="/" class="left-section">768 E-Library</a>
             <div class="right-section">
             <a class="contactUs" id="contactUs" href="">Contact Us</a>
-            <a class="signUp" id="signUp">Sign Up</a>
+            <a class="signUp" href="{% url 'sign-up' %}" id="signUp">Sign Up</a>
             </div>
         </nav>
     {% endblock %}
@@ -44,12 +43,10 @@
       {{ form.password }}
     </div>
     <button type="submit" class="signBtn">Login</button>
-    <p class="sign">Don't you have an account<a href="" class="signIn">Sign-up</a></p>
+    <p class="sign">Don't you have an account<a href="{% url 'sign-up' %}" class="signIn">Sign-up</a></p>
 
   </form>
 
   {% endblock %}
 
 </body>
-
-</html>
