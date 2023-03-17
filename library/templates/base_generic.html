@@ -51,20 +51,26 @@
             <li>
                 <a href="">contact us</a>
             </li>
+            <li>
+                <a href="{% url 'logout' %}?next={{ request.path }}">Logout</a>
+            </li>
+            
         </ul>
     </nav>
     <!-- end Navbar -->
     {% else %}
     <nav class="navbarss">
-        <div class="left-section">768 E-Library</div>
-        <div class="right-section">
-        <a class="contactUs" id="contactUs" href="">Contact Us</a>
-        <a class="signUp" id="signUp">Sign Up</a>
+        <a href="" class="left-section">768 E-Library</a>
+            <div class="right-section">
+            <a class="contactUs" id="contactUs" href="">Contact Us</a>
+            <a class="signUp" href="{% url 'login' %}" id="signUp">Sign In</a>
         </div>
+    </nav>
     {% endif %}
 
-    </nav>
     {% endblock %}
+
+    {% block content %}
 
     {% if user.is_authenticated %}
     <main>
@@ -138,7 +144,7 @@
         <p class="sub-title">
           Welcome to the 768 E-Library, a place for all your scholar needs.
         </p>
-        <a class="signBtn">Sign Up</a>
+        <a class="signBtn" href="{% url 'login' %}" >Sign In</a>
         <a class="contactBtn">Contact Us</a>
       </div>
       <div class="part2">
@@ -150,6 +156,8 @@
       </div>
     </div>
     {% endif %}
+
+    {% endblock %}
 
     {% block javascript %}
 

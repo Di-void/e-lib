@@ -1,0 +1,52 @@
+{% extends 'base_generic.html' %}
+
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'library/css/login.css' %}">
+{% endblock %}
+
+{% block title %}
+  <title>E-Lib | Login to your Account </title>
+{% endblock %}
+
+<body>
+
+    {% block navbar %}
+        <nav class="navbarss">
+            <a href="/" class="left-section">768 E-Library</a>
+            <div class="right-section">
+            <a class="contactUs" id="contactUs" href="">Contact Us</a>
+            <a class="signUp" href="{% url 'sign-up' %}" id="signUp">Sign Up</a>
+            </div>
+        </nav>
+    {% endblock %}
+
+  {% block content %}
+
+  <form class="main" method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+
+    {% if form.errors %}
+        <p class="errors">Your username and passwords don't match</p>
+    {% endif %}
+
+    <p class="title01">Sign In</p>
+    <p class="title02">Welcome Back!</p>
+
+    <div>
+      <p class="heading">{{ form.username.label_tag }}</p>
+      {{ form.username }}
+    </div>
+
+    <div>
+      <p class="heading">{{ form.password.label_tag }}</p>
+      {{ form.password }}
+    </div>
+    <button type="submit" class="signBtn">Login</button>
+    <p class="sign">Don't you have an account<a href="{% url 'sign-up' %}" class="signIn">Sign-up</a></p>
+
+  </form>
+
+  {% endblock %}
+
+</body>
