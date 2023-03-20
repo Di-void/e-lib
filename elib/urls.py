@@ -23,6 +23,6 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('videos/', include('videos.urls')),
-    path('books/', include('books.urls'))
+    path('books/', include('books.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
