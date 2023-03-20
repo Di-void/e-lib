@@ -46,7 +46,7 @@
                 <a href="">library</a>
             </li>
             <li>
-                <a href="">profile</a>
+                <a href="{% url 'change_password' %}">profile</a>
             </li>
             <li>
                 <a href="">contact us</a>
@@ -161,11 +161,11 @@
 
     {% block javascript %}
 
-    {% if user.is_authenticated %}
-        <script src="{% static 'library/js/logged_in.js' %}"></script>
-    {% else %}
-        <script src="{% static 'library/js/index.js' %}"></script>
-    {% endif %}
+        {% if user.is_authenticated %}
+            <script src="{% static 'library/js/logged_in.js' %}"></script>
+        {% else %}
+            <script src="{% static 'library/js/index.js' %}"></script>
+        {% endif %}
 
     {% endblock %}
   </body>
