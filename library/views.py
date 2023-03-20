@@ -3,8 +3,12 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
 from django.views import View
 from .forms import SignUpForm
+from django.contrib.auth.models import Group
 
 # Create your views here.
+
+# Constants
+LIBRARY_USERS = 'Library Users'
 
 def index(request):
     """View Function for the Landing Page of the Site"""
@@ -24,7 +28,7 @@ def index(request):
 #         form = UserCreationForm()
 #     return render(request, 'sign_up.html')
 
-class RegisterView(View):
+class SignUpView(View):
     form_class = SignUpForm
     initial = {'key': 'value'}
     template_name = 'sign_up.html'
@@ -32,20 +36,21 @@ class RegisterView(View):
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return redirect(to='/')
+        return super(SignUpView, self).dispatch(request, *args, **kwargs)
 
-        return super(RegisterView, self).dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
         form = self.form_class(initial=self.initial)
         return render(request, self.template_name, {'form': form})
 
+
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
 
         if form.is_valid():
-            form.save()
-
-            username = form.cleaned_data.get('username')
+            user = form.save()
+            group = Group.objects.get(name=LIBRARY_USERS)
+            user.groups.add(group)
 
             return redirect(to='login')
 
