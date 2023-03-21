@@ -1,0 +1,267 @@
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box ;
+
+}
+
+
+
+
+
+a {
+
+  text-decoration: none;
+
+  color: #010851;
+
+}
+
+
+
+.topcontainer {
+
+  background-color: #FFFFFF;
+
+  overflow: hidden;
+
+}
+
+
+
+.topcontainer a{
+
+  display: flex;
+
+  float: left;
+
+  text-align: center;
+
+  font-size: 18px;
+
+  text-decoration: none;
+
+  padding: 14px 0 25px 14px;
+
+  margin-left: 2rem;
+
+  
+
+}
+
+.topcontainer a:active {
+
+  background-color: #FF5F9F;
+
+}
+
+
+
+.logo {
+
+  align-items: center;
+
+  float: right;
+
+  padding: 14px 18px;
+
+  font-size: larger;
+
+}
+
+
+
+h2 {
+
+  color: #FFFFFF;
+
+  font-size: 30px;
+
+  padding: 40px;
+
+}
+
+
+
+p {
+
+  background: #FF5F9F;
+
+  color: #010851;
+
+  border-radius: 25px 25px 100px 25px;
+
+  margin: 15px;
+
+  place-items: center;
+
+  padding: 15px;
+
+}
+
+
+
+.active {
+
+background-color:#FFFFFF;
+
+}
+
+
+
+.containers{
+
+  position:relative;
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 16px;
+
+}
+
+
+
+#sidebar {
+
+    background: linear-gradient(135deg, #8C1BAB 0%, #F761A1 100%);
+
+    position:absolute;
+
+    width: 20%;
+
+    height: 90vh;
+
+    border-radius: 50px;
+
+   /* padding: 30px;*/
+
+    text-align: center;
+
+    flex-shrink: 0;
+
+    overflow-y: hidden;
+
+    overflow-x: hidden;
+
+}
+
+
+
+#header { 
+
+  height: 20px;
+
+  width: 50%;
+
+  margin-left: 11px;
+
+   position:absolute;
+
+   margin:auto;
+
+   top: 70px;
+
+   left: 150px;
+
+   right: 145px;
+
+}
+
+span {
+
+font-size: 30px;
+
+font-weight: bolder;
+
+}
+
+ input {
+
+  border-radius: 20px;
+
+  float:right;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align:left;
+
+  padding: 0 40px 0 16px;
+
+  width: 25%;
+
+  height: auto;
+
+ }
+
+
+
+.content {
+
+  display: flex;
+
+   width: 50%;
+
+   margin-left: 11px;
+
+   position:absolute;
+
+   margin:auto;
+
+   top: 180px;
+
+   left: 150px;
+
+   right: 145px;
+
+  justify-content: center;
+
+}
+
+
+
+.content2 {
+
+  display: flex;
+
+   width: 50%;
+
+   margin-left: 11px;
+
+   position:absolute;
+
+   margin:auto;
+
+   top: 400px;
+
+   left: 150px;
+
+   right: 145px;
+
+   bottom: 100px;
+
+  justify-content: center;
+
+
+
+}
+
+.books {
+
+  width: 10rem;
+
+  height: 10rem;
+
+  background: #F761A1;
+
+  margin: 1rem;
+
+  border-radius: 25px;
+
+}
