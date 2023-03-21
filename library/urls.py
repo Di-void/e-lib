@@ -3,7 +3,6 @@ from . import views
 from django.contrib.auth import views as auth_views
 from .views import SignUpView
 
-
 urlpatterns = [
     path('', views.index, name='home'),
     path('sign-up/', SignUpView.as_view(), name='sign-up'),

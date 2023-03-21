@@ -1,0 +1,124 @@
+{% extends 'base_generic.html' %} 
+{% block stylesheet %} 
+{% load static %}
+  <link rel="stylesheet" href="{% static 'books/css/index.css' %}" />
+{% endblock %} 
+
+{% block title %}
+<title>Books Library</title>
+{% endblock %}
+
+<!-- Navbar -->
+{% block navbar %}
+  <nav>
+    <div>
+      <a href="">Ebook Library</a>
+    </div>
+
+    <!-- nav links -->
+    <ul>
+      <li>
+        <a href="{% url 'home' %}">home</a>
+      </li>
+      <li>
+        <a href="">library</a>
+      </li>
+      <li>
+        <a href="{% url 'change_password' %}">profile</a>
+      </li>
+      <li>
+        <a href="">contact us</a>
+      </li>
+      <li>
+        <a href="{% url 'logout' %}?next={{ request.path }}">Logout</a>
+    </li>
+    </ul>
+  </nav>
+<!-- end Navbar -->
+{% endblock %}
+
+{% block content %}
+<div class="containers">
+  <div id="sidebar">
+    <div>
+      <h2>Categories</h2>
+    </div>
+    <a class="category_link active" href="#">All</a>
+    <a class="category_link" href="#">Business</a>
+    <a class="category_link" href="#">Health</a>
+    <a class="category_link" href="#">Art</a>
+    <a class="category_link" href="#">Religion</a>
+  </div>
+</div>
+
+<div id="header">
+  <span>All</span>
+  <form action="" method="post">
+    <input type="text" placeholder="search" />
+  </form>
+</div>
+
+<div class="content">
+  <div class="books">
+    <div>
+      <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
+    </div>
+
+    <div>
+      <div>Author: <a href="#">The Author</a></div>
+      <div>Title: <a href="#">The Title</a></div>
+    </div>
+  </div>
+  <div class="books">
+    <div>
+      <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
+    </div>
+
+    <div>
+      <div>Author: <a href="#">The Author</a></div>
+      <div>Title: <a href="#">The Title</a></div>
+    </div>
+  </div>
+  <div class="books">
+    <div>
+      <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
+    </div>
+
+    <div>
+      <div>Author: <a href="#">The Author</a></div>
+      <div>Title: <a href="#">The Title</a></div>
+    </div>
+  </div>
+  <div class="books">
+    <div>
+      <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
+    </div>
+
+    <div>
+      <div>Author: <a href="#">The Author</a></div>
+      <div>Title: <a href="#">The Title</a></div>
+    </div>
+  </div>
+  <div class="books">
+    <div>
+      <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
+    </div>
+
+    <div>
+      <div>Author: <a href="#">The Author</a></div>
+      <div>Title: <a href="#">The Title</a></div>
+    </div>
+  </div>
+  <div class="books">
+    <div>
+      <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
+    </div>
+
+    <div>
+      <div>Author: <a href="#">The Author</a></div>
+      <div>Title: <a href="#">The Title</a></div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
