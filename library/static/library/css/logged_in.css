@@ -1,0 +1,121 @@
+/* navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+nav div a {
+  font-size: 30px;
+  text-decoration: none;
+  color: var(--navy-blue);
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 3rem;
+}
+
+nav ul li {
+  list-style-type: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--navy-blue);
+  font-weight: 700;
+  font-size: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover {
+  opacity: 1;
+}
+
+main {
+  height: 80vh;
+  padding: 0 2rem;
+}
+/* hero section */
+
+/* Hero Section */
+
+.hero,
+.splide__track,
+.splide__list,
+.splide__slide {
+  height: inherit;
+}
+
+.slide_1,
+.slide_2 {
+  height: inherit;
+  padding: 2rem 3rem;
+  border-radius: 2em;
+  border-bottom-right-radius: 10em;
+  display: flex;
+  align-items: center;
+}
+
+.slide_1 {
+  background: linear-gradient(135deg, #8c1bab 0%, #f761a1 100%);
+}
+
+.slide_2 {
+  background: linear-gradient(135deg, #32ccbc 0%, #90f7ec 100%);
+}
+
+.slide_1 > :first-child,
+.slide_2 > :first-child {
+  min-width: 49% !important;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  color: white;
+}
+
+.slide_1 > :first-child h1,
+.slide_2 > :first-child h1 {
+  text-transform: capitalize;
+  font-size: 80px;
+  line-height: 80px;
+}
+
+.slide_1 > :first-child p,
+.slide_2 :first-child p {
+  font-size: 18px;
+}
+
+.slide_1 > :first-child > :last-child,
+.slide_2 > :first-child > :last-child {
+  width: fit-content;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 3rem;
+}
+
+.slide_1 > :first-child > :last-child a,
+.slide_2 > :first-child > :last-child a {
+  color: white;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.slide_1 > :first-child > :last-child a {
+  background-color: var(--dark-pink);
+  padding: 1rem 2rem;
+  border-radius: 0.5em;
+}
+.slide_2 > :first-child > :last-child a {
+  background-color: var(--light-green);
+  padding: 1rem 2rem;
+  border-radius: 0.5em;
+}
