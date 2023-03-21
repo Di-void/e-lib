@@ -43,6 +43,7 @@
       {{ form.password }}
     </div>
     <button type="submit" class="signBtn">Login</button>
+    <input type="hidden" name="next" value="{{ next }}" >
     <p class="sign">Don't you have an account<a href="{% url 'sign-up' %}" class="signIn">Sign-up</a></p>
 
   </form>
