@@ -123,10 +123,9 @@ span {
 
 .books > :first-child {
   overflow: hidden;
-  height: 10rem;
 }
 
-.book > :first-child img {
+.books > :first-child img {
   width: 100%;
   height: auto;
 }
