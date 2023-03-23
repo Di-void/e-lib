@@ -44,6 +44,36 @@ nav ul li a:hover {
   opacity: 1;
 }
 
+nav .library-nav {
+  position: relative;
+}
+
+nav .library-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #e2e2e2;
+  opacity: 0;
+  pointer-events: none;
+  transition: all ease-in .2s;
+  border-radius: .5rem;
+  width: max-content;
+  padding: 1rem;
+  z-index: 999;
+  position: absolute;
+  top: 40px;
+  left: -10px;
+}
+
+.dropdown-active {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+nav .library-nav ul a {
+  font-size: 17px;
+}
+
 h2 {
   color: #ffffff;
   font-size: 30px;

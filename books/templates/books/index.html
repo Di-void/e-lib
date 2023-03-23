@@ -20,9 +20,21 @@
       <li>
         <a href="{% url 'home' %}">home</a>
       </li>
-      <li>
-        <a href="">library</a>
-      </li>
+      <li class="library-nav">
+
+        <a href="#" id="dropdown-link">library</a>
+
+        <!-- Library Dropdown Menu -->
+        <ul id="dropdown-menu">
+            <li>
+                <a href="{% url 'books:home' %}">Ebook Library</a>
+            </li>
+
+            <li>
+                <a href="{% url 'videos:home' %}">Videos Library</a>
+            </li>
+        </ul>
+    </li>
       <li>
         <a href="{% url 'change_password' %}">profile</a>
       </li>
