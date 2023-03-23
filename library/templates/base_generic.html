@@ -42,9 +42,23 @@
             <li>
                 <a href="">home</a>
             </li>
-            <li>
-                <a href="">library</a>
+
+            <li class="library-nav">
+
+                <a href="#" id="dropdown-link">library</a>
+
+                <!-- Library Dropdown Menu -->
+                <ul id="dropdown-menu">
+                    <li>
+                        <a href="{% url 'books:home' %}">Ebook Library</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'videos:home' %}">Videos Library</a>
+                    </li>
+                </ul>
             </li>
+
             <li>
                 <a href="{% url 'change_password' %}">profile</a>
             </li>
@@ -161,11 +175,7 @@
 
     {% block javascript %}
 
-        {% if user.is_authenticated %}
-            <script src="{% static 'library/js/logged_in.js' %}"></script>
-        {% else %}
             <script src="{% static 'library/js/index.js' %}"></script>
-        {% endif %}
 
     {% endblock %}
   </body>
