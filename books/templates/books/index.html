@@ -72,7 +72,36 @@
 
 <div class="content-container">
   <div class="content">
-    <div class="books">
+    {% if books %}
+      {% for book in books %}
+        <div class="books">
+          <div>
+            <img src="{{ book.cover_image.url }}" alt="Book-Image" />
+          </div>
+      
+          <!-- Book Info -->
+          <div class="book-info">
+            <div>
+              Author: <span>{{ book.author }}</span>
+            </div>
+            <div>
+              Title: <span>{{ book.title }}</span>
+            </div>
+          </div>
+          <!-- End Book Info -->
+    
+          <!-- Book Actions -->
+          <div class="action-container">
+            <a target="_blank" href="#">View</a>
+            <a href="#">Download</a>
+          </div>
+          <!-- End Book Actions -->
+        </div>
+      {% endfor %}
+    {% endif %}
+
+
+    {% comment %} <div class="books">
       <div>
         <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
       </div>
@@ -186,30 +215,7 @@
         <a href="#">Download</a>
       </div>
       <!-- End Book Actions -->
-    </div>
-    <div class="books">
-      <div>
-        <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
-      </div>
-  
-      <!-- Book Info -->
-      <div class="book-info">
-        <div>
-          Author: <span>The Author</span>
-        </div>
-        <div>
-          Title: <span>The Title</span>
-        </div>
-      </div>
-      <!-- End Book Info -->
-
-      <!-- Book Actions -->
-      <div class="action-container">
-        <a target="_blank" href="#">View</a>
-        <a href="#">Download</a>
-      </div>
-      <!-- End Book Actions -->
-    </div>
+    </div> {% endcomment %}
   </div>
 </div>
 
