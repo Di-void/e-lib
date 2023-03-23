@@ -44,6 +44,36 @@ nav ul li a:hover {
   opacity: 1;
 }
 
+nav .library-nav {
+  position: relative;
+}
+
+nav .library-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #e2e2e2;
+  opacity: 0;
+  pointer-events: none;
+  transition: all ease-in .2s;
+  border-radius: .5rem;
+  width: max-content;
+  padding: 1rem;
+  z-index: 999;
+  position: absolute;
+  top: 40px;
+  left: -10px;
+}
+
+.dropdown-active {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+nav .library-nav ul a {
+  font-size: 17px;
+}
+
 h2 {
   color: #ffffff;
   font-size: 30px;
@@ -103,13 +133,20 @@ span {
   font-weight: bolder;
 }
 
+.content-container {
+  padding: 0.75rem;
+  position: absolute;
+  right: 5rem;
+  margin-top: 20px;
+  height: 80vh;
+  overflow: auto;
+  width: 70%;
+}
+
 .content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2rem;
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 20px;
 }
 
 .books {
@@ -130,6 +167,28 @@ span {
   height: auto;
 }
 
-.books > :last-child a {
+.books .book-info span {
+  font-size: 18px;
+}
+
+.books .action-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.books .action-container a {
+  display: block;
   text-decoration: none;
+  color: white;
+}
+
+.books .action-container > :first-child {
+  background-color: var(--view-btn);
+  border-radius: .5em;
+  padding: 0.5rem 0.75rem;
+}
+.books .action-container > :last-child {
+  background-color: var(--download-btn);
+  border-radius: .5em;
+  padding: 0.5rem 0.75rem;
 }
