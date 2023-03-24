@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'library.apps.LibraryConfig',
     'books.apps.BooksConfig',
-    'videos.apps.VideosConfig'
+    'videos.apps.VideosConfig',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +132,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'

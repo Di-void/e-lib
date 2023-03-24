@@ -5,20 +5,16 @@
     <link rel="stylesheet" href="{% static 'library/css/sign_up.css' %}">
 {% endblock %}
 
+
 {% block title %}
-    <title>E-Lib | Create a new Account</title>
+<title>E-Lib | Create a new Account</title>
 {% endblock %}
 
-<body>
-    {% block navbar %}
-        <nav class="navbarss">
-            <a class="left-section" href="/">768 E-Library</a>
-            <div class="right-section">
-            <a class="contactUs" id="contactUs" href="">Contact Us</a>
-            <a class="signUp" href="{% url 'login' %}" id="signUp">Sign In</a>
-            </div>
-        </nav>
-    {% endblock %}
+{% block currentPage %}
+<div>
+    <a href="{% url 'home' %}">768 E-Library</a>
+</div>
+{% endblock %}
 
     {% block content %}
     <form class="main" method="post">
@@ -71,5 +67,3 @@
     
     </form>
     {% endblock %}
-
-</body>

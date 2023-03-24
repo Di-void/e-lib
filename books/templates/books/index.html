@@ -1,4 +1,5 @@
-{% extends 'base_generic.html' %} 
+{% extends 'base_generic.html' %}
+
 {% block stylesheet %} 
 {% load static %}
   <link rel="stylesheet" href="{% static 'books/css/index.css' %}" />
@@ -8,46 +9,11 @@
 <title>Books Library</title>
 {% endblock %}
 
-<!-- Navbar -->
-{% block navbar %}
-  <nav>
+  {% block currentPage %}
     <div>
       <a href="">Ebook Library</a>
     </div>
-
-    <!-- nav links -->
-    <ul>
-      <li>
-        <a href="{% url 'home' %}">home</a>
-      </li>
-      <li class="library-nav">
-
-        <a href="#" id="dropdown-link">library</a>
-
-        <!-- Library Dropdown Menu -->
-        <ul id="dropdown-menu">
-            <li>
-                <a href="{% url 'books:home' %}">Ebook Library</a>
-            </li>
-
-            <li>
-                <a href="{% url 'videos:home' %}">Videos Library</a>
-            </li>
-        </ul>
-    </li>
-      <li>
-        <a href="{% url 'change_password' %}">profile</a>
-      </li>
-      <li>
-        <a href="">contact us</a>
-      </li>
-      <li>
-        <a href="{% url 'logout' %}">Logout</a>
-    </li>
-    </ul>
-  </nav>
-<!-- end Navbar -->
-{% endblock %}
+  {% endblock %}
 
 {% block content %}
 <div class="containers">
@@ -92,130 +58,13 @@
     
           <!-- Book Actions -->
           <div class="action-container">
-            <a target="_blank" href="#">View</a>
+            <a target="_blank" href="{{ book.copy.url }}#toolbar=0">View</a>
             <a href="#">Download</a>
           </div>
           <!-- End Book Actions -->
         </div>
       {% endfor %}
     {% endif %}
-
-
-    {% comment %} <div class="books">
-      <div>
-        <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
-      </div>
-  
-      <!-- Book Info -->
-      <div class="book-info">
-        <div>
-          Author: <span>The Author</span>
-        </div>
-        <div>
-          Title: <span>The Title</span>
-        </div>
-      </div>
-      <!-- End Book Info -->
-
-      <!-- Book Actions -->
-      <div class="action-container">
-        <a target="_blank" href="#">View</a>
-        <a href="#">Download</a>
-      </div>
-      <!-- End Book Actions -->
-    </div>
-    <div class="books">
-      <div>
-        <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
-      </div>
-  
-      <!-- Book Info -->
-      <div class="book-info">
-        <div>
-          Author: <span>The Author</span>
-        </div>
-        <div>
-          Title: <span>The Title</span>
-        </div>
-      </div>
-      <!-- End Book Info -->
-
-      <!-- Book Actions -->
-      <div class="action-container">
-        <a target="_blank" href="#">View</a>
-        <a href="#">Download</a>
-      </div>
-      <!-- End Book Actions -->
-    </div>
-    <div class="books">
-      <div>
-        <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
-      </div>
-  
-      <!-- Book Info -->
-      <div class="book-info">
-        <div>
-          Author: <span>The Author</span>
-        </div>
-        <div>
-          Title: <span>The Title</span>
-        </div>
-      </div>
-      <!-- End Book Info -->
-
-      <!-- Book Actions -->
-      <div class="action-container">
-        <a target="_blank" href="#">View</a>
-        <a href="#">Download</a>
-      </div>
-      <!-- End Book Actions -->
-    </div>
-    <div class="books">
-      <div>
-        <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
-      </div>
-  
-      <!-- Book Info -->
-      <div class="book-info">
-        <div>
-          Author: <span>The Author</span>
-        </div>
-        <div>
-          Title: <span>The Title</span>
-        </div>
-      </div>
-      <!-- End Book Info -->
-
-      <!-- Book Actions -->
-      <div class="action-container">
-        <a target="_blank" href="#">View</a>
-        <a href="#">Download</a>
-      </div>
-      <!-- End Book Actions -->
-    </div>
-    <div class="books">
-      <div>
-        <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
-      </div>
-  
-      <!-- Book Info -->
-      <div class="book-info">
-        <div>
-          Author: <span>The Author</span>
-        </div>
-        <div>
-          Title: <span>The Title</span>
-        </div>
-      </div>
-      <!-- End Book Info -->
-
-      <!-- Book Actions -->
-      <div class="action-container">
-        <a target="_blank" href="#">View</a>
-        <a href="#">Download</a>
-      </div>
-      <!-- End Book Actions -->
-    </div> {% endcomment %}
   </div>
 </div>
 
