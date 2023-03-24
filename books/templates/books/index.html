@@ -59,7 +59,9 @@
           <!-- Book Actions -->
           <div class="action-container">
             <a target="_blank" href="{{ book.copy.url }}#toolbar=0">View</a>
-            <a href="{{ book.copy.url }}" download>Download</a>
+            {% if perms.library.can_download %}
+              <a href="{{ book.copy.url }}" download class="download_link">Download</a>
+            {% endif %}
           </div>
           <!-- End Book Actions -->
         </div>
