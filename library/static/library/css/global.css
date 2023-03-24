@@ -17,3 +17,80 @@
   --view-btn: #1f7f83;
   --download-btn: #1f2683;
 }
+
+/* navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+}
+
+nav div a {
+  font-size: 30px;
+  text-decoration: none;
+  color: var(--navy-blue);
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 3rem;
+}
+
+nav ul li {
+  list-style-type: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--navy-blue);
+  font-weight: 700;
+  font-size: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover {
+  opacity: 1;
+}
+
+nav .library-nav {
+  position: relative;
+}
+
+nav .library-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #e2e2e2;
+  opacity: 0;
+  pointer-events: none;
+  transition: all ease-in .2s;
+  border-radius: .5rem;
+  width: max-content;
+  padding: 1rem;
+  z-index: 999;
+  position: absolute;
+  top: 40px;
+  left: -10px;
+}
+
+.dropdown-active {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+nav .library-nav ul a {
+  font-size: 17px;
+}
+
+.sign_btn {
+  display: block;
+  border: 1px solid var(--navy-blue);
+  border-radius: .3em;
+  padding: 0.75rem 1.5rem;
+}

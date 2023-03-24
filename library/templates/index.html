@@ -1,1 +1,129 @@
 {% extends 'base_generic.html' %}
+
+{% load static %}
+{% block stylesheet %}
+{% if user.is_authenticated %}
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="{% static 'library/css/logged_in.css' %}" />
+    {% else %}
+        <link rel="stylesheet" href="{% static 'library/css/index.css' %}" />
+    {% endif %}
+{% endblock %}
+
+{% block title %}
+    {% if user.is_authenticated %}
+        <title>E-Lib | Home</title>
+    {% else %}
+        <title>E-Lib</title>
+    {% endif %}
+{% endblock %}
+
+{% block currentPage %}
+<div>
+    <a href="">768 E-Library</a>
+</div>
+{% endblock %}
+
+{% comment %} ----- Content Block ----- {% endcomment %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<main>
+    <!-- hero section -->
+
+    <section id="image-carousel" class="splide hero" aria-label="Beautiful Images">
+        <!-- slide show -->
+
+        <div class="splide__track">
+            <ul class="splide__list">
+                <!-- Slide 1 -->
+                <li class="splide__slide">
+                    <div class="slide_1">
+                        <!-- Hero Text -->
+                        <div>
+                            <h1>E-Book library</h1>
+
+                            <p>Welcome to the 768 E-Library aka E-lib, a place for all your scholar needs.</p>
+
+                            <div>
+                                <a href="{% url 'books:home' %}">look around</a>
+                            </div>
+                        </div>
+                        <!-- End Hero Text -->
+
+                        <!-- Large Image -->
+                        <div>
+                            <img src="{% static 'library/assets/images/Boy_reading.png' %}" alt="">
+                        </div>
+
+                    </div>
+                </li>
+                <!-- end Slide 1 -->
+
+                <!-- Slide 2 -->
+                <li class="splide__slide">
+                    <div class="slide_2">
+                        <!-- Hero Text -->
+                        <div>
+                            <h1>Video Library</h1>
+
+                            <p>Welcome to the 768 E-Library aka E-lib, a place for all your scholar needs.</p>
+
+                            <div>
+                                <a href="{% url 'videos:home' %}">look around</a>
+                            </div>
+                        </div>
+                        <!-- End Hero Text -->
+
+                        <!-- Large Image -->
+                        <div>
+                            <img src="{% static 'library/assets/images/Woman_with_laptop.png' %}" alt="">
+                        </div>
+
+                    </div>
+                </li>
+                <!-- end Slide 2 -->
+            </ul>
+        </div>
+
+
+        <!-- end slide show -->
+    </section>
+</main>
+
+{% else %}
+<div class="second">
+  <div class="part1">
+    <p class="title1">Know more,</p>
+    <p class="title2">learn more...</p>
+    <p class="sub-title">
+      Welcome to the 768 E-Library, a place for all your scholar needs.
+    </p>
+    <a class="signBtn" href="{% url 'login' %}" >Sign In</a>
+    <a class="contactBtn">Contact Us</a>
+  </div>
+  <div class="part2">
+    <img
+      class="image"
+      src="{% static 'library/assets/images/ThreeDee.png' %}"
+      alt=""
+    />
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% comment %} ----- End Content Block ----- {% endcomment %}
+
+{% comment %} ---- Javascript Block {% endcomment %}
+{% block javascript %}
+
+    <script src="{% static 'library/js/splide_script.js' %}"></script>
+    <script src="{% static 'library/js/index.js' %}"></script>
+
+{% endblock %}
+{% comment %} ---- End Javascript Block {% endcomment %}
+
