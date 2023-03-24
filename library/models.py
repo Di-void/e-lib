@@ -25,9 +25,15 @@ class Book(models.Model):
 
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
 
+    class Meta:
+        permissions = [
+            ("can_download", "Can Download a Copy of a Book")
+        ]
+
     def __str__(self):
         """String representation of the Model Object"""
         return self.title
+
     
 
 class Author(models.Model):
