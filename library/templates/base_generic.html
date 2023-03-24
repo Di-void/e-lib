@@ -7,176 +7,92 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'library/css/global.css' %}" />
+    
+    {% block stylesheet %}
 
-    {% block stylesheet %} 
-        {% if user.is_authenticated %}
-            <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet"/>
-            <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-            <link rel="stylesheet" href="{% static 'library/css/logged_in.css' %}" />
-        {% else %}
-            <link rel="stylesheet" href="{% static 'library/css/index.css' %}" />
-        {% endif %} 
-    {% endblock %} 
+    {% endblock %}
 
     {% block title %}
-        {% if user.is_authenticated %}
-            <title>E-Lib | Home</title>
-        {% else %}
-            <title>E-Lib</title>
-        {% endif %}
+        
     {% endblock %}
   </head>
 
   <body>
-    {% block navbar %}
 
-    {% if user.is_authenticated %}
-        <!-- Navbar -->
-    <nav>
-        <div>
-            <a href="">768 E-Library</a>
-        </div>
-
-        <!-- nav links -->
-        <ul>
-            <li>
-                <a href="">home</a>
-            </li>
-
-            <li class="library-nav">
-
-                <a href="#" id="dropdown-link">library</a>
-
-                <!-- Library Dropdown Menu -->
-                <ul id="dropdown-menu">
-                    <li>
-                        <a href="{% url 'books:home' %}">Ebook Library</a>
-                    </li>
-
-                    <li>
-                        <a href="{% url 'videos:home' %}">Videos Library</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="{% url 'change_password' %}">profile</a>
-            </li>
-            <li>
-                <a href="">contact us</a>
-            </li>
-            <li>
-                <a href="{% url 'logout' %}?next={{ request.path }}">Logout</a>
-            </li>
-            
-        </ul>
-    </nav>
-    <!-- end Navbar -->
-    {% else %}
-    <nav class="navbarss">
-        <a href="" class="left-section">768 E-Library</a>
-            <div class="right-section">
-            <a class="contactUs" id="contactUs" href="">Contact Us</a>
-            <a class="signUp" href="{% url 'login' %}" id="signUp">Sign In</a>
-        </div>
-    </nav>
-    {% endif %}
-
+    {% comment %} ---- Navbar Block {% endcomment %}
+    
+    
+    <!-- Navbar -->
+<nav>
+    {% block currentPage %}
+    
     {% endblock %}
+
+
+<!-- nav links -->
+{% if user.is_authenticated %}
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">home</a>
+        </li>
+
+        <li class="library-nav">
+
+            <a href="#" id="dropdown-link">library</a>
+
+            <!-- Library Dropdown Menu -->
+            <ul id="dropdown-menu">
+                <li>
+                    <a href="{% url 'books:home' %}">Ebook Library</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'videos:home' %}">Videos Library</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="{% url 'change_password' %}">profile</a>
+        </li>
+        <li>
+            <a href="">contact us</a>
+        </li>
+        <li>
+            <a href="{% url 'logout' %}">Logout</a>
+        </li>
+        
+    </ul>
+    {% else %}
+    <ul>
+        <li>
+            <a href="contact-us">contact us</a>
+        </li>
+        <li>
+            {% if page == 'sign_up' %}
+                <a href="{% url 'login' %}" class="sign_btn">sign in</a>
+            {% else %}
+                <a href="{% url 'sign-up' %}" class="sign_btn" >sign up</a>
+            {% endif %}
+        </li>
+    </ul>
+    {% endif %}
+</nav>
+
+<!-- end Navbar -->
+
+{% comment %} ---- End Navbar Block ----- {% endcomment %}
 
     {% block content %}
 
-    {% if user.is_authenticated %}
-    <main>
-        <!-- hero section -->
-
-        <section id="image-carousel" class="splide hero" aria-label="Beautiful Images">
-            <!-- slide show -->
-
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <!-- Slide 1 -->
-                    <li class="splide__slide">
-                        <div class="slide_1">
-                            <!-- Hero Text -->
-                            <div>
-                                <h1>E-Book library</h1>
-
-                                <p>Welcome to the 768 E-Library aka E-lib, a place for all your scholar needs.</p>
-
-                                <div>
-                                    <a href="{% url 'books:home' %}">look around</a>
-                                </div>
-                            </div>
-                            <!-- End Hero Text -->
-
-                            <!-- Large Image -->
-                            <div>
-                                <img src="{% static 'library/assets/images/Boy_reading.png' %}" alt="">
-                            </div>
-
-                        </div>
-                    </li>
-                    <!-- end Slide 1 -->
-
-                    <!-- Slide 2 -->
-                    <li class="splide__slide">
-                        <div class="slide_2">
-                            <!-- Hero Text -->
-                            <div>
-                                <h1>Video Library</h1>
-
-                                <p>Welcome to the 768 E-Library aka E-lib, a place for all your scholar needs.</p>
-
-                                <div>
-                                    <a href="{% url 'videos:home' %}">look around</a>
-                                </div>
-                            </div>
-                            <!-- End Hero Text -->
-
-                            <!-- Large Image -->
-                            <div>
-                                <img src="{% static 'library/assets/images/Woman_with_laptop.png' %}" alt="">
-                            </div>
-
-                        </div>
-                    </li>
-                    <!-- end Slide 2 -->
-                </ul>
-            </div>
-
-
-            <!-- end slide show -->
-        </section>
-    </main>
-
-    {% else %}
-    <div class="second">
-      <div class="part1">
-        <p class="title1">Know more,</p>
-        <p class="title2">learn more...</p>
-        <p class="sub-title">
-          Welcome to the 768 E-Library, a place for all your scholar needs.
-        </p>
-        <a class="signBtn" href="{% url 'login' %}" >Sign In</a>
-        <a class="contactBtn">Contact Us</a>
-      </div>
-      <div class="part2">
-        <img
-          class="image"
-          src="{% static 'library/assets/images/ThreeDee.png' %}"
-          alt=""
-        />
-      </div>
-    </div>
-    {% endif %}
-
     {% endblock %}
 
+{% comment %} ---- Javascript Block {% endcomment %}
     {% block javascript %}
 
-            <script src="{% static 'library/js/index.js' %}"></script>
+        <script src="{% static 'library/js/index.js' %}"></script>
 
     {% endblock %}
+{% comment %} ---- End Javascript Block {% endcomment %}
   </body>
 </html>

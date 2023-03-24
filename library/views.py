@@ -12,7 +12,10 @@ LIBRARY_USERS = 'Library Users'
 
 def index(request):
     """View Function for the Landing Page of the Site"""
-    return render(request, 'index.html')
+    context = {
+        'page': 'sign_up',
+    }
+    return render(request, 'index.html', context=context)
 
 # def signup(request):
 #     if request.method == "POST":
@@ -41,7 +44,7 @@ class SignUpView(View):
 
     def get(self, request, *args, **kwargs):
         form = self.form_class(initial=self.initial)
-        return render(request, self.template_name, {'form': form})
+        return render(request, self.template_name, {'form': form, 'page': 'sign_up'})
 
 
     def post(self, request, *args, **kwargs):

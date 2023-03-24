@@ -6,62 +6,8 @@ body{
   margin: 18px 34px 28px 32px;
 }
 
-.navbarss{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 51px;
-  align-items: center;
-  
-}
-
 .errors {
   color: red;
-}
-
-.left-section{
-  color: #010851;
-  font-weight: 700;
-  font-size: 30px;
-  width: 50%;
-  text-decoration: none;
-  margin-left: 15px;
-  align-items: center;
-  padding-bottom: 2px;
-}
-
-.right-section{
-  width: 50%;
-  text-align: right;
-  margin-right: 15px;
-
-}
-
-.contactUs{
-  color: #454868;
-  font-weight: 500;
-  font-size: 18px;
-  font-style: normal;
-  text-decoration: none;
-}
-
-.signUp{
-  color: #010851;
-  height: 50px;   
-  width: 127px;
-  border-color: #45486833;
-  border-width: 1px;
-  border-radius: 6px;
-  border-style: solid;
-  margin-left: 15px;
-  background-color: white;
-  font-weight: 600;
-  font-size: 18px;
-  padding-left: 29px;
-  padding-right: 29px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  text-decoration: none;
 }
 
 .main{
