@@ -20,16 +20,17 @@
     <div>
       <h2>Categories</h2>
     </div>
-    <a class="category_link active" href="#">All</a>
-    <a class="category_link" href="#">Business</a>
-    <a class="category_link" href="#">Health</a>
-    <a class="category_link" href="#">Art</a>
-    <a class="category_link" href="#">Religion</a>
+    {% if categories %}
+    <a class="category_link {% if category == 'all' %} active {% else %} '' {% endif %}" href="{% url 'videos:home' %}">All</a>
+      {% for category_item in categories %}
+        <a class="category_link {% if category == category_item.0|lower %} active {% else %} '' {% endif %}" href="{% url 'videos:home' %}?category={{ category_item.1 }}">{{ category_item.0 }}</a>
+      {% endfor %}
+    {% endif %}
   </div>
 </div>
 
 <div id="header">
-  <span>All</span>
+  <span>{{ category|upper }}</span>
   <form action="" method="post">
     <input type="text" placeholder="search" />
   </form>
@@ -37,7 +38,22 @@
 
 <div class="content-container">
   <div class="content">
-    <div class="videos">
+    {% if videos %}
+      {% for video in videos %}
+        <div class="videos">
+          <div>
+            <img src="{{ video.thumbnail.url }}" alt="Book-Image" />
+          </div>
+      
+          <div>
+            <div>Title: <a href="#">{{ video.title }}</a></div>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div>No books to display</div>
+    {% endif %}
+    {% comment %} <div class="videos">
       <div>
         <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
       </div>
@@ -45,52 +61,7 @@
       <div>
         <div>Title: <a href="#">The Title</a></div>
       </div>
-    </div>
-    <div class="videos">
-      <div>
-        <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
-      </div>
-  
-      <div>
-        <div>Title: <a href="#">The Title</a></div>
-      </div>
-    </div>
-    <div class="videos">
-      <div>
-        <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
-      </div>
-  
-      <div>
-        <div>Title: <a href="#">The Title</a></div>
-      </div>
-    </div>
-    <div class="videos">
-      <div>
-        <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
-      </div>
-  
-      <div>
-        <div>Title: <a href="#">The Title</a></div>
-      </div>
-    </div>
-    <div class="videos">
-      <div>
-        <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
-      </div>
-  
-      <div>
-        <div>Title: <a href="#">The Title</a></div>
-      </div>
-    </div>
-    <div class="videos">
-      <div>
-        <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
-      </div>
-  
-      <div>
-        <div>Title: <a href="#">The Title</a></div>
-      </div>
-    </div>
+    </div> {% endcomment %}
   </div>
 </div>
 
