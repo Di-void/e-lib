@@ -110,8 +110,7 @@
     border-radius: 50px;
     text-align: center;
     flex-shrink: 0;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    overflow: auto;
   }
   
   #header {
