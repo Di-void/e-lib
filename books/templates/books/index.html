@@ -21,16 +21,17 @@
     <div>
       <h2>Categories</h2>
     </div>
-    <a class="category_link active" href="#">All</a>
-    <a class="category_link" href="#">Business</a>
-    <a class="category_link" href="#">Health</a>
-    <a class="category_link" href="#">Art</a>
-    <a class="category_link" href="#">Religion</a>
+    {% if categories %}
+    <a class="category_link {% if category == 'all' %} active {% else %} '' {% endif %}" href="{% url 'books:home' %}">All</a>
+      {% for category_item in categories %}
+        <a class="category_link {% if category == category_item.0|lower %} active {% else %} '' {% endif %}" href="{% url 'books:home' %}?category={{ category_item.1 }}">{{ category_item.0 }}</a>
+      {% endfor %}
+    {% endif %}
   </div>
 </div>
 
 <div id="header">
-  <span>All</span>
+  <span>{{ category|upper }}</span>
   <form action="" method="post">
     <input type="text" placeholder="search" />
   </form>
@@ -66,6 +67,8 @@
           <!-- End Book Actions -->
         </div>
       {% endfor %}
+      {% else %}
+        <div>No books to display</div>
     {% endif %}
   </div>
 </div>
