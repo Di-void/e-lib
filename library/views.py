@@ -58,3 +58,6 @@ class SignUpView(View):
             return redirect(to='login')
 
         return render(request, self.template_name, {'form': form})
+
+def contact_us(request):
+    return render(request, 'contact_us.html')

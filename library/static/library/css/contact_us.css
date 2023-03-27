@@ -1,0 +1,33 @@
+form{
+    display:block;
+    position:absolute;
+    right:35%;
+    top:20%;
+}
+#sub{
+    height:5vh;
+    width:35vw;
+    padding:7px;
+}
+#message{
+    height:20vh;
+    width:35vw;
+    padding:7px;
+}
+.text{
+    border:1px solid rgb(138, 132, 132);
+    border-radius:10px;
+}
+#btn{
+    height:5vh;
+    width:36vw;
+    border:0px solid rgb(138, 132, 132);
+    border-radius:10px;
+    color:white;
+    background-color:rgb(7, 7, 73);
+    font-size:1rem;
+    font-weight:bold;
+}
+.title{
+    color:rgb(4, 4, 146);
+}
