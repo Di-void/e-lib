@@ -56,7 +56,7 @@
             <a href="{% url 'change_password' %}">profile</a>
         </li>
         <li>
-            <a href="">contact us</a>
+            <a href="{% url 'contact-us' %}">contact us</a>
         </li>
         <li>
             <a href="{% url 'logout' %}">Logout</a>
@@ -66,7 +66,7 @@
     {% else %}
     <ul>
         <li>
-            <a href="contact-us">contact us</a>
+            <a href="{% url 'contact-us' %}">contact us</a>
         </li>
         <li>
             {% if page == 'sign_up' %}

@@ -1,0 +1,29 @@
+{% extends 'base_generic.html' %}
+        {% block stylesheet %}
+        {% load static %}
+            <link rel="stylesheet" href="{% static 'library/css/contact_us.css' %}" >
+        {% endblock %}
+
+
+        {% block currentPage %}
+        <div>
+            <a href="{% url 'home' %}">768 E-Library</a>
+          </div>
+        {% endblock %}
+        
+        {% block content %}
+        <div class="body">
+            <form>
+                <h2>Contact Us</h2>
+                <br><br><br>
+                <p class="title">Subject</p>
+                <textarea type="text" placeholder="Subject" class="text" id="sub" required></textarea>
+                <br><br><br>
+                <p class="title">Message</p>
+                <textarea type="text" placeholder="Talk to us, we're here for you..." class="text" id="message" required></textarea>
+                <br><br><br>
+                <button type="" id="btn">SEND</button>
+            </form>
+        </div>
+        {% endblock %}
+        
