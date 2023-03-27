@@ -8,6 +8,9 @@ You should first make sure you have Python installed on your computer. Refer to 
 # Clone the repo
 git clone https://github.com/Di-void/e-lib.git e-library
 
+# Enter project directory
+cd e-library
+
 # Install pipenv:
 pip install pipenv
 
