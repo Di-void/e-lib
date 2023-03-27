@@ -46,22 +46,13 @@
           </div>
       
           <div>
-            <div>Title: <a href="#">{{ video.title }}</a></div>
+            <div>Title: <a href="{% url 'videos:video-detail' video.id %}">{{ video.title }}</a></div>
           </div>
         </div>
       {% endfor %}
     {% else %}
       <div>No books to display</div>
     {% endif %}
-    {% comment %} <div class="videos">
-      <div>
-        <img src="https://via.placeholder.com/600x400" alt="Book-Image" />
-      </div>
-  
-      <div>
-        <div>Title: <a href="#">The Title</a></div>
-      </div>
-    </div> {% endcomment %}
   </div>
 </div>
 

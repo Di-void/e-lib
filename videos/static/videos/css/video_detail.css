@@ -1,0 +1,37 @@
+.main{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.part1{
+  width: 284px;
+  height: 463px;
+  line-height: 40px;
+  margin-top: 3px;
+}
+
+.part2{
+  margin-left: 30px;
+}
+
+.header{
+  font-weight: 700;
+  font-size: 40px;
+  color: #010851;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.content{
+  width: 100%;
+  font-size: 20px;
+}
+
+.videoo{
+  border-radius: 48px;
+  width: 803px;
+  height: 499px;
+}
+
+

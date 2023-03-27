@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from library.models import Category, Video
 
@@ -35,3 +35,13 @@ def index(request):
     }    
 
     return render(request, 'videos/index.html', context=context)
+
+@login_required
+def video_detail(request, pk):
+    video = get_object_or_404(Video, pk=pk)
+    categories = video.category.all()
+    context = {
+        'video': video,
+        'categories': categories
+    }
+    return render(request, 'videos/video_detail.html', context=context)

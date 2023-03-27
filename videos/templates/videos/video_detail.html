@@ -1,0 +1,47 @@
+{% extends 'base_generic.html' %}
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'videos/css/video_detail.css' %}" >
+{% endblock %}
+
+{% block title %}
+    {% if video %}
+        <title>{{ video.title }}</title>
+    {% else %}
+        <title>Video Detail</title>
+    {% endif %}
+        
+    {% comment %} <title>Video Detail</title> {% endcomment %}
+{% endblock %}
+
+{% block currentPage %}
+    <div>
+        <a href="{% url 'videos:home' %}">Videos Library</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <div class="part1">
+      <p class="header">
+        {% for category in categories %}
+            {{ category|upper }},
+        {% endfor %}
+      </p>
+      <p class="content">
+         Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin.
+
+
+      </p>
+    </div>
+
+  <div class="part2">
+    <p class="header">
+      {{ video.title }}
+    </p>
+
+    <video src="{{ video.copy.url }}" controls width= "400" height="400" class="videoo"></video>
+
+  </div>
+</div>
+{% endblock %}
