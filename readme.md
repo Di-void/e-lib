@@ -48,14 +48,6 @@ After that, you should have `pipenv` installed on your local. Now you can simply
 pipenv install
 ```
 
-## CREATING THE ADMIN USER
-
-For and admin user, to gain access to the admin interface, a "superuser" first needs to be created. You can create the admin user by running the following command on the root directory of the project in the terminal:
-
-```shell
-py manage.py createsuperuser
-```
-
 This would install all the project's dependencies needed as specified by the `Pipflie` into a virtual environment on your computer. This is where all your dependencies would live.
 
 To activate this project's virtualenv, run:
@@ -65,6 +57,16 @@ pipenv shell
 ```
 
 After running the above, you should be able to run any django-admin related commands using the manage.py file like running migrations and so on.
+
+## CREATING THE ADMIN USER
+
+For and admin user, to gain access to the admin interface, a "superuser" first needs to be created. You can create the admin user by running the following command on the root directory of the project in the terminal:
+
+```shell
+py manage.py createsuperuser
+```
+
+After running the above command, follow the prompts displayed in the terminal.
 
 To exit the shell, run:
 
